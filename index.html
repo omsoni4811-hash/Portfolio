@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Om Prakash Kumar Soni | Portfolio</title>
+
+<style>
+:root{
+    --primary:#4facfe;
+    --bg:white;
+    --text:black;
+}
+
+body.dark{
+    --bg:#121212;
+    --text:white;
+}
+
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    scroll-behavior:smooth;
+}
+
+/* Navbar */
+nav{
+    background:#111;
+    padding:15px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin:0 10px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+.toggle{
+    cursor:pointer;
+    color:white;
+}
+
+/* Hero */
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:linear-gradient(to right,#4facfe,#00f2fe);
+    color:white;
+    text-align:center;
+}
+
+.hero img{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    border:4px solid white;
+    object-fit:cover;
+}
+
+.hero h1{
+    font-size:38px;
+}
+
+.typing{
+    font-size:20px;
+    border-right:2px solid white;
+    padding-right:5px;
+}
+
+/* Sections */
+section{
+    padding:60px 20px;
+    text-align:center;
+}
+
+/* Cards */
+.card{
+    background:#f4f4f4;
+    margin:10px auto;
+    padding:20px;
+    border-radius:10px;
+    width:80%;
+    transition:0.3s;
+}
+
+body.dark .card{
+    background:#1e1e1e;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+/* Skills */
+.skills div{
+    background:#ddd;
+    margin:10px auto;
+    width:80%;
+    border-radius:20px;
+}
+
+.skills span{
+    display:block;
+    background:var(--primary);
+    color:white;
+    padding:10px;
+    border-radius:20px;
+    animation:grow 2s;
+}
+
+/* Button */
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    background:var(--primary);
+    color:white;
+    border-radius:20px;
+    text-decoration:none;
+}
+
+/* Contact */
+iframe{
+    width:100%;
+    height:600px;
+    border:none;
+}
+
+/* Footer */
+footer{
+    background:#111;
+    color:white;
+    padding:10px;
+}
+
+/* Animations */
+@keyframes grow{
+    from{width:0;}
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .hero h1{
+        font-size:26px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+<div style="color:white;">Om Soni</div>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<div class="toggle" onclick="toggleMode()">🌙</div>
+</nav>
+
+<!-- Hero -->
+<section id="home" class="hero">
+<img src="profile.jpg.jpeg">
+<h1>Om Prakash Kumar Soni</h1>
+<div class="typing" id="typing"></div>
+<p>Kathmandu, Nepal</p>
+<a href="#contact" class="btn">Hire / Contact Me</a>
+</section>
+
+<!-- About -->
+<section id="about">
+<h2>About Me</h2>
+<p>
+I am a BCSIT student at Shubhashree College of Management. 
+I am passionate about technology, development, and continuous learning.
+I am disciplined, punctual, and dedicated to achieving excellence.
+</p>
+<p><b>DOB:</b> 26 Oct 2004</p>
+<p><b>Address:</b> Kathmandu</p>
+</section>
+
+<!-- Education -->
+<section id="education">
+<h2>Academic Background</h2>
+
+<div class="card">
+<h3>BCSIT (Fall 2025)</h3>
+<p>Shubhashree College of Management</p>
+</div>
+
+<div class="card">
+<h3>+2 Level</h3>
+<p>Triton International College, Kathmandu</p>
+</div>
+
+<div class="card">
+<h3>School</h3>
+<p>Marsyangdi Shiksha Sadan Secondary School, Mugling, Chitwan</p>
+</div>
+
+</section>
+
+<!-- Skills -->
+<section id="skills">
+<h2>Skills</h2>
+
+<div class="skills">
+<div><span style="width:90%">HTML</span></div>
+<div><span style="width:85%">CSS</span></div>
+<div><span style="width:75%">JavaScript</span></div>
+<div><span style="width:70%">C Programming</span></div>
+</div>
+
+</section>
+
+<!-- Achievements -->
+<section>
+<h2>Achievements</h2>
+<div class="card">
+<p>
+Received multiple medals, trophies, and certificates in academics and sports. 
+Awarded "Most Punctual Student of the Year".
+</p>
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+<h2>Book Appointment</h2>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeA7VUhUdj0Kn-sEm5FTmnGzbrZWKj5Qa0J1tkBOswCpfegHQ/viewform?embedded=true" width="640" height="1277" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+</section>
+
+<!-- Footer -->
+<footer>
+<p>© 2026 Om Prakash Kumar Soni</p>
+</footer>
+
+<script>
+// Dark mode
+function toggleMode(){
+    document.body.classList.toggle("dark");
+}
+
+// Typing effect
+const text = ["BCSIT Student","Future Developer","Hardworking & Punctual"];
+let i=0,j=0;
+
+function type(){
+    if(j < text[i].length){
+        document.getElementById("typing").innerHTML += text[i].charAt(j);
+        j++;
+        setTimeout(type,100);
+    }else{
+        setTimeout(()=>{
+            document.getElementById("typing").innerHTML="";
+            j=0;
+            i=(i+1)%text.length;
+            type();
+        },1500);
+    }
+}
+type();
+</script>
+
+</body>
+</html>
