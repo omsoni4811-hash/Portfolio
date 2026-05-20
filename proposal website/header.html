@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Local Service Finder</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#f8fafc;
+  color:#0f172a;
+}
+
+/* NAVBAR */
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+  background:white;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:700;
+  color:#2563eb;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#334155;
+  font-weight:500;
+}
+
+.login-btn{
+  padding:10px 20px;
+  border-radius:12px;
+  background:#2563eb;
+  color:white !important;
+}
+
+/* HERO */
+
+.hero{
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:80px 60px;
+  gap:60px;
+  background:linear-gradient(135deg,#eff6ff,#f8fafc);
+}
+
+.hero-text{
+  flex:1;
+}
+
+.hero-text h1{
+  font-size:58px;
+  line-height:1.1;
+  margin-bottom:20px;
+}
+
+.hero-text span{
+  color:#2563eb;
+}
+
+.hero-text p{
+  font-size:18px;
+  color:#64748b;
+  margin-bottom:30px;
+}
+
+.search-box{
+  display:flex;
+  background:white;
+  padding:10px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  max-width:650px;
+}
+
+.search-box input{
+  flex:1;
+  padding:16px;
+  border:none;
+  outline:none;
+  font-size:16px;
+}
+
+.search-box button{
+  padding:16px 30px;
+  border:none;
+  border-radius:14px;
+  background:#2563eb;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.hero-image{
+  flex:1;
+}
+
+.hero-image img{
+  width:100%;
+}
+
+/* SERVICES */
+
+.services{
+  padding:100px 60px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.section-title h2{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  color:#64748b;
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:white;
+  padding:35px;
+  border-radius:24px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+.card h3{
+  margin:20px 0 10px;
+}
+
+.card p{
+  color:#64748b;
+}
+
+.icon{
+  width:70px;
+  height:70px;
+  border-radius:18px;
+  background:#dbeafe;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+}
+
+/* LOGIN SECTION */
+
+.login-section{
+  padding:100px 60px;
+  background:#0f172a;
+  color:white;
+}
+
+.login-wrapper{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:40px;
+}
+
+.login-card{
+  background:#1e293b;
+  padding:40px;
+  border-radius:24px;
+}
+
+.login-card h2{
+  margin-bottom:10px;
+}
+
+.login-card p{
+  color:#cbd5e1;
+  margin-bottom:25px;
+}
+
+.login-card input{
+  width:100%;
+  margin-bottom:15px;
+  padding:15px;
+  border:none;
+  border-radius:14px;
+  background:#334155;
+  color:white;
+  outline:none;
+}
+
+.login-card button{
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:14px;
+  background:#2563eb;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* HOW IT WORKS */
+
+.steps{
+  padding:100px 60px;
+}
+
+.step-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.step{
+  text-align:center;
+}
+
+.step-number{
+  width:70px;
+  height:70px;
+  background:#2563eb;
+  color:white;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  margin:auto;
+  margin-bottom:20px;
+}
+
+/* FOOTER */
+
+footer{
+  background:#111827;
+  color:white;
+  padding:40px 60px;
+  text-align:center;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .navbar{
+    padding:20px;
+    flex-direction:column;
+    gap:20px;
+  }
+
+  .hero{
+    flex-direction:column;
+    text-align:center;
+    padding:60px 20px;
+  }
+
+  .hero-text h1{
+    font-size:42px;
+  }
+
+  .search-box{
+    flex-direction:column;
+  }
+
+  .search-box button{
+    width:100%;
+  }
+
+  .services,
+  .login-section,
+  .steps{
+    padding:80px 20px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">ServiceHub</div>
+
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">Providers</a>
+<a href="#">Contact</a>
+<a href="login.html" class="login-btn">Login</a>
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>Find Trusted <span>Local Services</span> Near You</h1>
+
+<p>
+Connect instantly with electricians, plumbers,
+cleaners, mechanics, tutors, and more.
+</p>
+
+<div class="search-box">
+<input type="text" placeholder="Search for services...">
+<input type="text" placeholder="Location">
+<button>Search</button>
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png">
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services">
+
+<div class="section-title">
+<h2>Popular Services</h2>
+<p>Choose from hundreds of local professionals</p>
+</div>
+
+<div class="service-grid">
+
+<div class="card">
+<div class="icon">🔧</div>
+<h3>Plumbing</h3>
+<p>Expert plumbers available anytime.</p>
+</div>
+
+<div class="card">
+<div class="icon">⚡</div>
+<h3>Electrician</h3>
+<p>Certified electrical repair services.</p>
+</div>
+
+<div class="card">
+<div class="icon">🧹</div>
+<h3>Cleaning</h3>
+<p>Home and office deep cleaning experts.</p>
+</div>
+
+<div class="card">
+<div class="icon">🚗</div>
+<h3>Mechanic</h3>
+<p>Quick vehicle repair and maintenance.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- LOGIN SECTION -->
+
+<section class="login-section" id="login">
+
+<div class="section-title">
+<h2>Login Portal</h2>
+<p>Access your account</p>
+</div>
+
+<div class="login-wrapper">
+
+<!-- CUSTOMER LOGIN -->
+
+<!-- <div class="login-card">
+
+<h2>Consumer Login</h2>
+<p>Book and manage your services</p>
+
+<input type="email" placeholder="Email">
+<input type="password" placeholder="Password">
+
+<button>Login as Consumer</button>
+
+</div>
+
+<!- PROVIDER LOGIN -->
+
+<!-- <div class="login-card"> -->
+<!-- 
+<h2>Service Provider Login</h2>
+<p>Manage jobs and grow your business</p>
+
+<input type="email" placeholder="Business Email">
+<input type="password" placeholder="Password">
+
+<button>Login as Provider</button> -->
+
+<!-- </div> --> 
+
+</div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+
+<section class="steps">
+
+<div class="section-title">
+<h2>How It Works</h2>
+<p>Simple and fast process</p>
+</div>
+
+<div class="step-grid">
+
+<div class="step">
+<div class="step-number">1</div>
+<h3>Search</h3>
+<p>Find nearby service providers.</p>
+</div>
+
+<div class="step">
+<div class="step-number">2</div>
+<h3>Book</h3>
+<p>Select your preferred provider.</p>
+</div>
+
+<div class="step">
+<div class="step-number">3</div>
+<h3>Get Service</h3>
+<p>Receive fast and reliable help.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h2>ServiceHub</h2>
+<p>Connecting people with trusted local professionals.</p>
+
+</footer>
+
+</body>
+</html>
